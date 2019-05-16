@@ -226,7 +226,7 @@
     <Content Include="assets\towns\Avoca.jpg" />
     <Content Include="assets\towns\Axedale.jpg" />
     <Content Include="assets\towns\Bacchus Marsh.jpg" />
-    <Content Include="assets\towns\Bairnsdale.jpeg" />
+    <Content Include="assets\towns\Bairnsdale.jpg" />
     <Content Include="assets\towns\Ballan.jpg" />
     <Content Include="assets\towns\Balmoral.jpg" />
     <Content Include="assets\towns\Bannockburn.jpg" />
@@ -239,7 +239,7 @@
     <Content Include="assets\towns\Beeac.jpg" />
     <Content Include="assets\towns\Beechworth.jpg" />
     <Content Include="assets\towns\Bellbridge.jpg" />
-    <Content Include="assets\towns\Benalla.jpeg" />
+    <Content Include="assets\towns\Benalla.jpg" />
     <Content Include="assets\towns\Berriwillock.jpg" />
     <Content Include="assets\towns\Bethanga.jpg" />
     <Content Include="assets\towns\Beulah.jpg" />
@@ -272,7 +272,7 @@
     <Content Include="assets\towns\Cape Schanck.jpg" />
     <Content Include="assets\towns\Cardigan Village.jpg" />
     <Content Include="assets\towns\Carisbrook.jpg" />
-    <Content Include="assets\towns\Casterton.jpeg" />
+    <Content Include="assets\towns\Casterton.jpg" />
     <Content Include="assets\towns\Castlemaine.jpg" />
     <Content Include="assets\towns\Cavendish.jpg" />
     <Content Include="assets\towns\Charlton.jpg" />
@@ -328,7 +328,7 @@
     <Content Include="assets\towns\Foster.jpg" />
     <Content Include="assets\towns\Garfield.jpg" />
     <Content Include="assets\towns\Gembrook.jpg" />
-    <Content Include="assets\towns\Girgarre.jpeg" />
+    <Content Include="assets\towns\Girgarre.jpg" />
     <Content Include="assets\towns\Gisborne.jpg" />
     <Content Include="assets\towns\Glengarry.jpg" />
     <Content Include="assets\towns\Glenlyon.jpg" />
@@ -360,7 +360,7 @@
     <Content Include="assets\towns\Inglewood.jpg" />
     <Content Include="assets\towns\Inverleigh.jpg" />
     <Content Include="assets\towns\Inverloch.jpg" />
-    <Content Include="assets\towns\Jamieson.jpeg" />
+    <Content Include="assets\towns\Jamieson.jpg" />
     <Content Include="assets\towns\Jeparit.jpg" />
     <Content Include="assets\towns\Kaniva.jpg" />
     <Content Include="assets\towns\Katamatite.jpg" />
@@ -377,7 +377,7 @@
     <Content Include="assets\towns\Koroit.jpg" />
     <Content Include="assets\towns\Korong Vale.jpg" />
     <Content Include="assets\towns\Korumburra.jpg" />
-    <Content Include="assets\towns\Kyabram.jpeg" />
+    <Content Include="assets\towns\Kyabram.jpg" />
     <Content Include="assets\towns\Kyneton.jpg" />
     <Content Include="assets\towns\Lake Boga.jpg" />
     <Content Include="assets\towns\Lake Bolac.jpg" />
@@ -411,7 +411,7 @@
     <Content Include="assets\towns\Manangatang.jpg" />
     <Content Include="assets\towns\Mansfield.jpg" />
     <Content Include="assets\towns\Marlo.jpg" />
-    <Content Include="assets\towns\Marong.jpeg" />
+    <Content Include="assets\towns\Marong.jpg" />
     <Content Include="assets\towns\Maryborough.jpg" />
     <Content Include="assets\towns\Maryknoll.jpg" />
     <Content Include="assets\towns\Marysville.jpg" />
@@ -474,7 +474,7 @@
     <Content Include="assets\towns\Port Albert.jpg" />
     <Content Include="assets\towns\Port Campbell.jpg" />
     <Content Include="assets\towns\Port Fairy.jpg" />
-    <Content Include="assets\towns\Port Welshpool.jpeg" />
+    <Content Include="assets\towns\Port Welshpool.jpg" />
     <Content Include="assets\towns\Portarlington.jpg" />
     <Content Include="assets\towns\Portland.jpg" />
     <Content Include="assets\towns\Powelltown.jpg" />
@@ -1197,6 +1197,7 @@
     <Content Include="Scripts\esm\popper.js.map" />
     <Content Include="Scripts\esm\popper-utils.min.js.map" />
     <Content Include="Scripts\esm\popper-utils.js.map" />
+    <None Include="Properties\PublishProfiles\VicGenesis3 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
