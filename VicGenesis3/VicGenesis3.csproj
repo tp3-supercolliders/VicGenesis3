@@ -192,8 +192,7 @@
     <Content Include="assets\images\clients\c3.png" />
     <Content Include="assets\images\clients\c4.png" />
     <Content Include="assets\images\counter\counter-banner.jpg" />
-    <Content Include="assets\images\explore\2222.jpg" />
-    <Content Include="assets\images\explore\3333.png" />
+    <Content Include="assets\images\explore\1234.jpg" />
     <Content Include="assets\images\explore\e1.jpg" />
     <Content Include="assets\images\explore\e2.jpg" />
     <Content Include="assets\images\explore\e3.jpg" />
@@ -1277,9 +1276,7 @@
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Web.config">
-      <SubType>Designer</SubType>
-    </Content>
+    <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
