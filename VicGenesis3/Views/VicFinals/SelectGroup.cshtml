@@ -1,0 +1,70 @@
+﻿@model IEnumerable<VicGenesis3.Models.VicFinal>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="~/Home/Index">Homepage</a>
+            </div>
+            <div>
+                <ul class="nav navbar-nav">
+
+                    <li><a href="~/Home/Map">Commuting Cost</a></li>
+                    <li class="active"><a href="~/Home/MapCulture">Cultural Groups Map</a></li>
+                    <li><a href="~/Home/MapCriminal">Criminal Incidents Map</a></li>
+                    <li><a href="~/VicFinals/Select">Ranking </a></li>
+                    <li><a href="~/VicFinals/Compare">Comparison </a></li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div>
+        <img src="~/assets/images/explore/2222.jpg" height="500" width="1600" />
+    </div>
+
+
+
+    @using (Html.BeginForm())
+    {
+    <div class="form-horizontal" align="center">
+        <h3>Search the areas with the culture group you want!</h3>
+        <h4> Or do you want to see them on Map? <a href="~/Home/MapCulture">Click Here</a></h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            <h4>      &nbsp;Select the culture group below</h4>
+        </div>
+        <div class="col-md-4 col-sm-6"></div>
+        <div class="col-md-4 col-sm-6">
+            <p>
+                @Html.DropDownList("Culture", null, null, new { @class = "form-control" })
+            </p>
+            <input type="submit" onclick="myFunction()" value="Submit" class="btn btn-default" />
+
+        </div>
+        <div class="col-md-4 col-sm-6"></div>
+
+
+    </div>
+    }
+    
+    
+
+</body>
+</html>

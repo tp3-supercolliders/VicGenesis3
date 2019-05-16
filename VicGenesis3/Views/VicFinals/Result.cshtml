@@ -1,0 +1,300 @@
+﻿@model IEnumerable<VicGenesis3.Models.VicFinal>
+
+@{
+    ViewBag.Title = "Result";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="~/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/css/lianxi.css">
+    <script nonce="rAnd0m123" src="~/js/jquery-1.9.1.min.js"></script>
+    <script nonce="rAnd0m123" src="~/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script nonce="rAnd0m123" src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script nonce="rAnd0m123" src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+
+<body style="background-image:url(/assets/images/back.jpg)">
+    <style>
+        span {
+            color: brown;
+            font-size: xx-large;
+        }
+    </style>
+    <script nonce="rAnd0m123">
+
+        function show() {
+            document.getElementById("div").style.display = "";
+        }
+        function hidden() {
+            document.getElementById("div").style.display = "none";
+        }
+    </script>
+
+
+    @if (ViewBag.Culture == ViewBag.Culture1 || ViewBag.Culture == "" || ViewBag.Culture1 == "")
+    {
+        <h1>
+
+            <div clas="container" style="padding: 1px 5px 1px; display:none">
+                <button type="button" class="btn btn-primary popover-show"
+                        title=" " data-container="body" style="display:none"></button>
+            </div>
+            <script nonce="rAnd0m123">
+                $(function () { $('.popover-show').popover('show'); });
+                $(function () {
+                    $('.popover-show').on('shown.bs.popover', function () {
+                        alert("Please select TWO DIFFERENT suburbs!");
+                    })
+                });
+            </script>
+
+        </h1>
+    }
+
+
+
+    <div class="container" style="margin-top: 100px;">
+
+        <div align="center">
+            <h3>Here is the comparison for<span> @ViewBag.Culture</span> and <span> @ViewBag.Culture1 </span></h3>
+            <a href="~/VicTowns/Compare" style="color:blue"> <u>click here to re-select the areas</u></a>
+
+        </div><br />
+        <div align="center">
+            @*<a href="~/Victorias/SelectGroup">*@
+            <a href="~/Home/Index">
+                <button type="button" class="btn btn-warning">Back to Homepage</button>
+            </a>
+        </div>
+        <br />
+
+
+        <div align="left">
+            <h4>Numbers Of Services</h4>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-sm-12 col-md-12 col-xs-12">
+                <div class="up_downs">
+                    <div class="left_up_downs pull-left">
+                        <p>100</p>
+                        <p>80</p>
+                        <p>60</p>
+                        <p>40</p>
+                        <p>20</p>
+                        <p>0</p>
+                    </div>
+                    <div class="right_up_downs pull-left">
+                        <div class="right_up_downs_top">
+                            <ul class="list-unstyled right_top_ul">
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                            <div class="right_pillar">
+                                <ul class="list-unstyled right_pillar_ul">
+                                    <li>
+                                        <div class="right_pillar_for">
+
+                                            @foreach (var item in Model)
+                                            {
+                                                if (item.Community_Name.Equals(ViewBag.Culture) || item.Community_Name.Equals(ViewBag.Culture1))
+                                                {
+                                                    <div class="right_pillar_fill right_pillar_color1" id="pillar_content1"
+                                                         data-toggle="tooltip" data-placement="auto"
+                                                         title="<p class='text-left'>@item.Community_Name</p><p  class='text-left'>Services Number: @item.Funded_services</p>">
+
+
+                                                        <div class="right_pillar_bg_1" style="height: @item.Funded_services%"></div>
+
+                                                    </div>
+                                                }
+                                            }
+
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="right_pillar_for">
+                                            @foreach (var item in Model)
+                                            {
+                                                if (item.Community_Name.Equals(ViewBag.Culture) || item.Community_Name.Equals(ViewBag.Culture1))
+                                                {
+                                                    <div class="right_pillar_fill right_pillar_color3" id="pillar_content3"
+                                                         data-toggle="tooltip" data-placement="auto"
+                                                         title="<p class='text-left'>@item.Community_Name</p><p  class='text-left'>Services Number: @item.HACC_services</p>">
+                                                        <div class="right_pillar_bg_3" style="height: @item.HACC_services%"></div>
+                                                    </div>
+                                                }
+                                            }
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="right_pillar_for">
+
+                                            @foreach (var item in Model)
+                                            {
+                                                if (item.Community_Name.Equals(ViewBag.Culture) || item.Community_Name.Equals(ViewBag.Culture1))
+                                                {
+                                                    <div class="right_pillar_fill  right_pillar_color6" id="pillar_content6"
+                                                         data-toggle="tooltip" data-placement="auto"
+                                                         title="<p class='text-left'>@item.Community_Name</p><p  class='text-left'>Services Number: @item.Health_or_Human_services</p>">
+                                                        <div class="right_pillar_bg_6" style="height: @item.Health_or_Human_services%"></div>
+                                                    </div>
+                                                }
+                                            }
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="right_pillar_for">
+                                            @foreach (var item in Model)
+                                            {
+                                                if (item.Community_Name.Equals(ViewBag.Culture) || item.Community_Name.Equals(ViewBag.Culture1))
+                                                {
+                                                    <div class="right_pillar_fill right_pillar_color7" id="pillar_content7"
+                                                         data-toggle="tooltip" data-placement="auto"
+                                                         title="<p class='text-left'>@item.Community_Name</p><p  class='text-left'>Services Number: @item.Dental_sites</p>">
+                                                        <div class="right_pillar_bg_7" style="height:  @item.Dental_sites%"></div>
+                                                    </div>
+                                                }
+                                            }
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="right_pillar_for">
+                                            @foreach (var item in Model)
+                                            {
+                                                if (item.Community_Name.Equals(ViewBag.Culture) || item.Community_Name.Equals(ViewBag.Culture1))
+                                                {
+                                                    <div class="right_pillar_fill right_pillar_color4" id="pillar_content4"
+                                                         data-toggle="tooltip" data-placement="auto"
+                                                         title="<p class='text-left'>@item.Community_Name</p><p  class='text-left'>Services Number: @item.Primary_schools</p>">
+                                                        <div class="right_pillar_bg_4" style="height:  @item.Primary_schools%"></div>
+                                                    </div>
+                                                }
+                                            }
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="right_up_downs_bottom clearfix">
+                            <div class="pull-left text-center">Funded Services</div>
+                            <div class="pull-left text-center">HACC Services</div>
+                            <div class="pull-left text-center">Human Services</div>
+                            <div class="pull-left text-center">Dental Sites</div>
+                            <div class="pull-left text-center">Primary Schools</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script nonce="rAnd0m123">
+        $(function () {
+            myTooltip('#pillar_content1');
+            myTooltip('#pillar_content2');
+            myTooltip('#pillar_content3');
+            myTooltip('#pillar_content4');
+            myTooltip('#pillar_content5');
+            myTooltip('#pillar_content6');
+            myTooltip('#pillar_content7');
+            myTooltip('#pillar_content8');
+            myTooltip('#pillar_content9');
+            myTooltip('#pillar_content10');
+        });
+        function myTooltip(id) {
+            $('[data-toggle="tooltip"]').tooltip({ html: true });
+
+            $(id).on('show.bs.tooltip', function () {
+                var bg = $(id).find("div").css("background-color");
+                //              alert(bg);
+                setTimeout(function () {  //alert(0);
+                    $(".tooltip.top .tooltip-arrow").css({ 'border-top-color': bg });
+                    $(".tooltip.bottom .tooltip-arrow").css({ 'border-bottom-color': bg });
+                    $(".tooltip.left .tooltip-arrow").css({ 'border-left-color': bg });
+                    $(".tooltip.right .tooltip-arrow").css({ 'border-right-color': bg });
+                    $(".tooltip-inner").css({
+                        'background': "#fff",
+                        'color': "#333",
+                        "border": "1px",
+                        "border-style": 'solid',
+                        "border-color": bg,
+                        "padding": "10px",
+                        "box-sizing": "border-box",
+                        "font-size": "16px"
+                    });
+                }, 10);
+            })
+        }
+        $(function () {
+            $(".right_pillar_for").each(function (index) {
+                var len = $(".right_pillar_for").eq(index).children().length;
+                console.log(len);
+                if (len == 1) {
+                    $(".right_pillar_for").eq(index).find(".right_pillar_fill").addClass("right_pillar_dan");
+                } else {
+                    $(".right_pillar_for").eq(index).find(".right_pillar_fill").removeClass("right_pillar_dan");
+                }
+            })
+        })
+    </script>
+
+    <div style="text-align:center;clear:both">
+        <script nonce="rAnd0m123" src="/gg_bd_ad_720x90.js" type="text/javascript"></script>
+        <script nonce="rAnd0m123" src="/follow.js" type="text/javascript"></script>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

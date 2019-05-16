@@ -1,0 +1,79 @@
+﻿
+@{
+    ViewBag.Title = "Select";
+    Layout = null;
+}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+
+    <link href="~/Wopop_files/style_log.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="~/Wopop_files/style.css" />
+    <link rel="stylesheet" type="text/css" href="~/Wopop_files/userpanel.css" />
+    <link rel="stylesheet" type="text/css" href="~/Wopop_files/jquery.ui.all.css" />
+
+
+</head>
+
+<body class="login" mycollectionplug="bind">
+    <style>
+        span {
+            color: brown;
+            font-size: x-large
+        }
+    </style>
+
+
+    <div class="login_m">
+        <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Show the Ranked towns</h3>
+        <h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; based on your perferences</h3>
+        <br />
+        <div class="login_boder">
+
+            <div class="login_padding" id="login_model">
+
+                @using (Html.BeginForm())
+                {
+                    <div class="form-horizontal" align="center">
+                        <hr />
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group">
+                            <h4>      &nbsp;Select the perferences here</h4>
+                        </div>
+                        <br />
+                        <h8>First Important &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</h8>
+                        <p>
+                            @Html.DropDownList("Culture", null, null, new { @class = "form-control" })
+                        </p>
+                        <h8>Second Important &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</h8>
+                        <p>
+                            @Html.DropDownList("Culture1", null, null, new { @class = "form-control" })
+                        </p><h8>Third Important&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h8>
+                        <p>
+                            @Html.DropDownList("Culture2", null, null, new { @class = "form-control" })
+                        </p>
+                      
+                    </div>
+
+
+                    <br />
+
+                    <div class="rem_sub">
+                        <div class="rem_sub_l">
+                        </div>
+                        <label>
+                            <input type="submit" onclick="myFunction()" value="Submit" class="sub_button" name="button" id="button" style="opacity: 0.7;" />
+                        </label>
+                    </div>
+                }
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
+

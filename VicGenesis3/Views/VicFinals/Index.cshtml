@@ -1,0 +1,173 @@
+﻿@model IEnumerable<VicGenesis3.Models.VicFinal>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/dataTables")
+    @Scripts.Render("~/bundles/modernizr")
+
+
+    <title></title>
+    <meta charset="utf-8" />
+    <script nonce="rAnd0m123" src="~/Scripts/jquery-3.3.1.js"></script>
+    <script nonce="rAnd0m123" src="~/Scripts/bootstrap.js"></script>
+    <link rel="stylesheet" type="text/css" href="DataTables/datatables.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="~/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="~/css/style.css" rel="stylesheet">
+    <script nonce="rAnd0m123" type="text/javascript" src="~/Scripts/DataTables/datatables.min.js"></script>
+
+    <style type="text/css">
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+
+
+        .bg {
+            display: table;
+            width: 100%;
+            height: 100%;
+            padding: 100px 0;
+            text-align: center;
+            color: #fff;
+            background: url(http://www.xiandanke.cn/Image/intro-bg.jpg) no-repeat bottom center;
+            background-color: #000;
+            background-size: cover;
+        }
+
+        .my-navbar {
+            padding: 20px 0;
+            transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
+        }
+
+            .my-navbar a {
+                background: transparent !important;
+                color: #fff !important
+            }
+
+                .my-navbar a:hover {
+                    color: #45bcf9 !important;
+                    background: transparent;
+                    outline: 0
+                }
+
+            .my-navbar a {
+                transition: color 0.5s ease-in-out;
+            }
+
+
+        .top-nav {
+            padding: 0;
+            background: #000;
+        }
+
+
+        .button {
+            background-color: #1c87c9;
+            border: none;
+            color: white;
+            padding: 20px 34px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 20px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+<body>
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="~/Home/Index">Homepage</a>
+            </div>
+            <div>
+                <ul class="nav navbar-nav">
+                    <li><a href="~/Home/Map">Commuting Cost</a></li>
+                    <li><a href="~/Home/MapCulture">Cultural Groups Map</a></li>
+                    <li><a href="~/Home/MapCriminal">Criminal Incidents Map</a></li>
+                    <li><a href="~/VicFinals/Select">Ranking </a></li>
+                    <li><a href="~/VicFinals/Compare">Comparison </a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+   
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    <script nonce="rAnd0m123">
+        $(document).ready(function () {
+            $('#vicTable').DataTable({
+                "sDom": '<"nav"lf>t<"nav"i>',
+                "language": {
+                    "search": "Search (using any keyword) :"
+                }
+            });
+        });
+    </script>
+
+    @if (Model.ToArray().Length == 0)
+    {
+
+        <div class="alert alert-warning" align="center">
+            <a href="#" class="close" data-dismiss="alert">
+                &times;
+            </a>
+            <strong>Warning!<br /></strong>We can not find any area named "@ViewBag.Culture". Please check your input and try agian!
+        </div>
+    }
+
+
+    @foreach (var item in Model)
+    {
+
+        <section class="creative_feature_area">
+
+            <div class="container">
+
+                <div class="digital_feature p_100">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="d_feature_text">
+                                <div class="main_title">
+                                    <h2> @Html.DisplayFor(modelItem => item.Community_Name) <br /> </h2>
+                                </div>
+                                <p>@item.Main_cultural_group3_percentage</p>
+                                <br />
+                                <p>Click the button below to see more details.</p>
+                                <br /> <br />
+                                <a class="read_btn" @Html.ActionLink("Show More Details", "Details", new { id = item.Id })></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="d_feature_img">
+                                <img src="@item.Main_cultural_group_3_name" height="400" width="600" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    }
+</body>
+</html>

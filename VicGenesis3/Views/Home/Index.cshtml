@@ -1,0 +1,587 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    Layout = null;
+}
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <!-- meta data -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!--font-family-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <!-- title of site -->
+    <title>VicGenesis</title>
+    <!-- For favicon png -->
+    <link rel="shortcut icon" type="image/icon" href="~/assets/logo/favicon.png" />
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script nonce="rAnd0m123" src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!--font-awesome.min.css-->
+    <link rel="stylesheet" href="~/assets/css/font-awesome.min.css">
+    <!--linear icon css-->
+    <link rel="stylesheet" href="~/assets/css/linearicons.css">
+    <!--animate.css-->
+    <link rel="stylesheet" href="~/assets/css/animate.css">
+    <!--flaticon.css-->
+    <link rel="stylesheet" href="~/assets/css/flaticon.css">
+    <!--slick.css-->
+    <link rel="stylesheet" href="~/assets/css/slick.css">
+    <link rel="stylesheet" href="~/assets/css/slick-theme.css">
+
+    <!--bootstrap.min.css-->
+    <link rel="stylesheet" href="~/assets/css/bootstrap.min.css">
+
+    <!-- bootsnav -->
+    <link rel="stylesheet" href="~/assets/css/bootsnav.css">
+
+    <!--style.css-->
+    <link rel="stylesheet" href="~/assets/css/style.css">
+
+    <!--responsive.css-->
+    <link rel="stylesheet" href="~/assets/css/responsive.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link href="~/jquery-ui-1.9.2.custom/css/base/jquery-ui-1.9.2.custom.min.css" rel="stylesheet" />
+    <script src="~/jquery-ui-1.9.2.custom/js/jquery-1.8.3.js"></script>
+    <script src="~/jquery-ui-1.9.2.custom/js/jquery-ui-1.9.2.custom.min.js"></script>
+
+    <script>
+        $(function () {
+
+            $("#accordion").accordion();
+
+            var availableTags = [
+                "East Sale",
+                "Dinner Plain",
+                "Culgoa",
+                "Jamieson",
+                "Walpeup",
+                "Harrow",
+                "Walwa",
+                "Colbinabbin",
+                "Scarsdale",
+                "Bealiba",
+                "Cavendish",
+                "Napoleons",
+                "Raywood",
+                "Skenes Creek",
+                "Tarwin Lower",
+                "Buchan",
+                "Noojee",
+                "Simpson",
+                "Berriwillock",
+                "Bonnie Doon",
+                "Kialla West",
+                "Ultima",
+                "Thornton",
+                "Sawmill Settlement",
+                "Shepparton East",
+                "Forrest",
+                "Longwood",
+                "Tarrington",
+                "Piangil",
+                "Springhurst",
+                "Myrniong",
+                "Sandy Point",
+                "Alberton",
+                "Thorpdale",
+                "Nilma",
+                "Narrawong",
+                "Fish Creek",
+                "Glenthompson",
+                "Cranbourne South",
+                "Great Western",
+                "Loch",
+                "Tarnagulla",
+                "Girgarre",
+                "Coongulla",
+                "Seaspray",
+                "Bethanga",
+                "Glenlyon",
+                "Katandra West",
+                "Korong Vale",
+                "Smiths Beach",
+                "Balmoral",
+                "Peterborough",
+                "Powelltown",
+                "Taradale",
+                "Buxton",
+                "Woomelang",
+                "Guildford",
+                "Tyers",
+                "Traralgon South",
+                "Apsley",
+                "Port Welshpool",
+                "Mount Egerton",
+                "Waterford Park",
+                "Milawa",
+                "Kiewa",
+                "Willow Grove",
+                "Noorat",
+                "Cabarita",
+                "Beulah",
+                "Omeo",
+                "Tallygaroopna",
+                "Moyhu",
+                "Beeac",
+                "Underbool",
+                "Axedale",
+                "Wunghnu",
+                "Arcadia Downs",
+                "Katamatite",
+                "Tynong",
+                "Toolamba",
+                "Pyalong",
+                "Dartmoor",
+                "Cann River",
+                "Port Campbell",
+                "Don Valley",
+                "Wandiligong",
+                "Beveridge",
+                "Lake Bolac",
+                "Sunset Strip",
+                "Quambatook",
+                "Tallarook",
+                "Blackwood",
+                "Rawson",
+                "Smythesdale",
+                "Macarthur",
+                "Murrayville",
+                "Port Albert",
+                "Dookie",
+                "Halls Gap",
+                "Derrinallum",
+                "Oxley",
+                "Manangatang",
+                "Goornong",
+                "Cardigan Village",
+                "Marong",
+                "Tawonga",
+                "Bundalong",
+                "Learmonth",
+                "Kilcunda",
+                "Dales Creek",
+                "Goroke",
+                "Woorinen",
+                "Poowong",
+                "Leitchville",
+                "Eldorado",
+                "Snake Valley",
+                "Pioneer Bay",
+                "Little River",
+                "Dalyston",
+                "Shoreham",
+                "Harrietville",
+                "Gunbower",
+                "Bulla",
+                "St Andrews",
+                "Willaura",
+                "Lindenow",
+                "Tylden",
+                "Cape Schanck",
+                "Talbot",
+                "Enfield",
+                "Meredith",
+                "Darnum",
+                "Glenrowan",
+                "Nyah",
+                "Bellbridge",
+                "Greendale",
+                "Tungamah",
+                "Lismore",
+                "Marlo",
+                "Maryknoll",
+                "Wimbledon Heights",
+                "Toongabbie",
+                "Bushfield-Woodford",
+                "Batesford",
+                "Golden Beach - Paradise Beach",
+                "Bridgewater",
+                "Linton",
+                "Harcourt",
+                "Menzies Creek",
+                "Panton Hill",
+                "Rupanyup",
+                "Tangambalanga",
+                "Lethbridge",
+                "Newlands Arm",
+                "Lockington",
+                "Gordon",
+                "Meeniyan",
+                "Eagle Point",
+                "Merrigum",
+                "Moriac",
+                "Dunkeld",
+                "Red Hill South",
+                "Natimuk",
+                "Cannons Creek",
+                "Warneet",
+                "Barnawartha",
+                "Chewton",
+                "Jeparit",
+                "Nyora",
+                "Penshurst",
+                "Nar-Nar-Goon",
+                "Strathmerton",
+                "Inverleigh",
+                "Minyip",
+                "Toora",
+                "Birregurra",
+                "Pyramid Hill",
+                "Skipton",
+                "Hazeldene",
+                "Marysville",
+                "Corinella",
+                "Rhyll",
+                "Lake Tyers Beach",
+                "Allansford",
+                "Stanhope",
+                "Briagolong",
+                "Boolarra",
+                "Flinders",
+                "Nyah West",
+                "Seville East",
+                "Miners Rest",
+                "Malmsbury",
+                "Longwarry",
+                "Yinnar",
+                "Rainbow",
+                "Newstead",
+                "Grantville",
+                "Porepunkah",
+                "Glengarry",
+                "Wesburn",
+                "Neerim South",
+                "Surf Beach-Sunderland Bay",
+                "Venus Bay",
+                "Bruthen",
+                "Yackandandah",
+                "Hopetoun",
+                "Trentham",
+                "Sea Lake",
+                "Werribee South",
+                "Cape Paterson",
+                "Violet Town",
+                "Warburton East",
+                "Eildon",
+                "Indented Head",
+                "Avenel",
+                "Tooradin",
+                "Carisbrook",
+                "Birchip",
+                "Kinglake West-Pheasant Creek",
+                "Yarragon",
+                "Dunolly",
+                "Garfield",
+                "Metung",
+                "Inglewood",
+                "Wycheproof",
+                "Lake Boga",
+                "Elmore",
+                "Boort",
+                "Coronet Bay",
+                "Wahgunyah",
+                "Kaniva",
+                "Murchison",
+                "Wedderburn",
+                "Murtoa",
+                "Teesdale",
+                "Edenhope",
+                "Rockbank",
+                "Timboon",
+                "Loch Sport",
+                "Lorne",
+                "Lang Lang",
+                "Gembrook",
+                "Koondrook",
+                "Blind Bight",
+                "Mount Macedon",
+                "Tallangatta",
+                "San Remo",
+                "Avoca",
+                "Rosedale",
+                "Aireys Inlet-Fairhaven",
+                "Baranduda",
+                "Mortlake",
+                "Clunes",
+                "Chiltern",
+                "Mallacoota",
+                "Beaconsfield Upper",
+                "Coleraine",
+                "Ouyen",
+                "Lancefield",
+                "Rushworth",
+                "Yea",
+                "Campbells Creek",
+                "Yallourn North",
+                "Beaufort",
+                "Charlton",
+                "Tongala",
+                "Foster",
+                "Wandong-Heathcote Junction",
+                "Bunyip",
+                "Kinglake",
+                "Corryong",
+                "Winchelsea",
+                "Heywood",
+                "Macedon",
+                "Stratford",
+                "Koo-Wee-Rup",
+                "Launching Place",
+                "Seville",
+                "Maldon",
+                "Mirboo North",
+                "Koroit",
+                "Apollo Bay-Marengo",
+                "Coldstream",
+                "Donald",
+                "Nagambie",
+                "Nathalia",
+                "Cobden",
+                "Millgrove",
+                "Heyfield",
+                "Diggers Rest",
+                "Newhaven",
+                "Dimboola",
+                "Yarra Junction",
+                "Yarra Glen",
+                "Ballan",
+                "Heathcote",
+                "Pearcedale",
+                "Casterton",
+                "Mount Beauty",
+                "St Leonards",
+                "Yarram",
+                "Robinvale",
+                "Woori Yallock",
+                "Rutherglen",
+                "Terang",
+                "Warburton",
+                "Merbein",
+                "Bannockburn",
+                "Nhill",
+                "Cohuna",
+                "Buninyong",
+                "Riddells Creek",
+                "Bright",
+                "Alexandra",
+                "Orbost",
+                "Anglesea",
+                "Trafalgar",
+                "Creswick",
+                "St Arnaud",
+                "Warracknabeal",
+                "Hurstbridge",
+                "Port Fairy",
+                "Beechworth",
+                "Red Cliffs",
+                "Myrtleford",
+                "Rochester",
+                "Romsey",
+                "Broadford",
+                "Mansfield",
+                "Whittlesea",
+                "Cockatoo",
+                "Woodend",
+                "Euroa",
+                "Camperdown",
+                "Portarlington",
+                "Korumburra",
+                "Daylesford",
+                "Tatura",
+                "Paynesville",
+                "Numurkah",
+                "Kilmore",
+                "Kerang",
+                "Inverloch",
+                "Queenscliff",
+                "Wallan",
+                "Churchill",
+                "Kyneton",
+                "Maffra",
+                "Cowes",
+                "Leongatha",
+                "Cobram",
+                "Gisborne",
+                "Emerald",
+                "Lakes Entrance",
+                "Yarrawonga",
+                "Kyabram",
+                "Stawell",
+                "Seymour",
+                "Drouin",
+                "Wonthaggi",
+                "Healesville",
+                "Ararat",
+                "Leopold",
+                "Castlemaine",
+                "Maryborough",
+                "Torquay",
+                "Lara",
+                "Hamilton",
+                "Swan Hill",
+                "Benalla",
+                "Drysdale-Clifton Springs",
+                "Portland",
+                "Colac",
+                "Warragul",
+                "Bairnsdale",
+                "Bacchus Marsh",
+                "Echuca",
+                "Sale",
+                "Ocean Grove-Barwon Heads",
+                "Morwell",
+                "Horsham",
+                "Moe-Yallourn",
+                "Wangaratta",
+                "Traralgon",
+                "Sunbury",
+                "Warrnambool",
+                "Wodonga",
+                "Mildura",
+                "Shepparton-Mooroopna"
+            ];
+            $("#autocomplete").autocomplete({
+                source: availableTags
+            });
+
+
+
+
+
+
+
+
+
+
+
+        });
+    </script>
+
+
+
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+    <![endif]-->
+    <!--header-top start -->
+    </header><!--/.header-top-->
+    <!--header-top end -->
+    <!-- top-area Start -->
+    <!-- top-area End -->
+    <!--welcome-hero start -->
+    <section id="home" class="welcome-hero">
+        <div class="container">
+            <div class="welcome-hero-txt">
+                <h2>Welcome to <br> regional victoria</h2>
+                <p>
+                    All for a better life!
+                </p>
+            </div><br /><br /><br /><br /><br />
+
+                                                      <h3 style="color:white">
+                                                          Type the suburb name to search
+                                                      </h3><br />
+            @using (Html.BeginForm("HelloForm", "Home"))
+            {
+
+                                                      <div>
+                                                          <input id="autocomplete" type="text" style="font-size:large" name="ydName" placeholder="Eg: Benalla" />     <input class="btn btn-info" type="submit" value="Search"  onclick="myFunction()"/>
+                                                          
+
+
+
+                                                      </div>
+
+
+                                                              }
+                                                             <br /><br /><br /><br /><br /><br /><br /><br />
+                                                              <section id="list-topics" class="list-topics">
+                                                                  <div class="container">
+                                                                      <div class="list-topics-content">
+                                                                          <ul>
+                                                                              <li>
+                                                                                  <a href="~/Home/Map" data-toggle="tooltip" data-placement="top" title="Select community on map to know their house price and commuting cost">
+                                                                                      <div class="single-list-topics-content">
+                                                                                          <div class="single-list-topics-icon">
+                                                                                              <i class="flaticon-location-on-road"></i>
+                                                                                          </div>
+                                                                                          <h2>Know more on Map</h2>
+
+                                                                                      </div>
+                                                                                  </a>
+                                                                              </li>
+                                                                              <li>
+                                                                                  <a href="~/VicFinals/SelectGroup" data-toggle="tooltip" data-placement="top" title="Show the areas based on the culture group you selected">
+                                                                                      <div class="single-list-topics-content">
+                                                                                          <div class="single-list-topics-icon">
+                                                                                              <i class="flaticon-search"></i>
+                                                                                          </div>
+                                                                                          <h2>Culture Sorting</h2>
+                                                                                      </div>
+                                                                                  </a>
+                                                                              </li>
+                                                                              <li>
+                                                                                  <a href="~/VicFinals/Select" data-toggle="tooltip" data-placement="top" title="Rank and show the top3 areas based on your perferences">
+                                                                                      <div class="single-list-topics-content">
+                                                                                          <div class="single-list-topics-icon">
+                                                                                              <i class="flaticon-list-with-dots"></i>
+                                                                                          </div>
+                                                                                          <h2>Ranking</h2>
+                                                                                      </div>
+                                                                                  </a>
+                                                                              </li>
+                                                                              <li>
+                                                                                  <a href="~/VicFinals/Compare" data-toggle="tooltip" data-placement="top" title="Compare the two areas you selected">
+                                                                                      <div class="single-list-topics-content">
+                                                                                          <div class="single-list-topics-icon">
+                                                                                              <i class="flaticon-lightbulb-idea"></i>
+                                                                                          </div>
+                                                                                          <h2>Comparison</h2>
+                                                                                      </div>
+                                                                                  </a>
+                                                                              </li>
+
+                                                                          </ul>
+                                                                      </div>
+                                                                  </div>
+                                                                  <script nonce="rAnd0m123">
+                                                                      $(function () { $("[data-toggle='tooltip']").tooltip(); });
+                                                                  </script>
+
+                                                                  <!--footer end-->
+                                                                  <!-- Include all js compiled plugins (below), or include individual files as needed -->
+                                                                  <!--modernizr.min.js-->
+                                                                  <script nonce="rAnd0m123" src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+
+                                                                  <!--bootstrap.min.js-->
+                                                                  <script nonce="rAnd0m123" src="~/assets/js/bootstrap.min.js"></script>
+
+                                                                  <!-- bootsnav js -->
+                                                                  <script nonce="rAnd0m123" src="~/assets/js/bootsnav.js"></script>
+                                                                  <!--feather.min.js-->
+                                                                  <script nonce="rAnd0m123" src="~/assets/js/feather.min.js"></script>
+                                                                  <!-- counter js -->
+                                                                  <script nonce="rAnd0m123" src="~/assets/js/jquery.counterup.min.js"></script>
+                                                                  <script nonce="rAnd0m123" src="~/assets/js/waypoints.min.js"></script>
+                                                                  <!--slick.min.js-->
+                                                                  <script nonce="rAnd0m123" src="~/assets/js/slick.min.js"></script>
+                                                                  <script nonce="rAnd0m123" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+
+                                                                  <!--Custom JS-->
+                                                                  <script nonce="rAnd0m123" src="~/assets/js/custom.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+Create table [dbo].[VicFinal](
+[Id] int identity(1,1) not null,
+[COMM_CODE] nvarchar(max),
+[Community_Name] nvarchar(max),
+[Funded_services] nvarchar(max),
+[HACC_services] nvarchar(max),
+[Health_or_Human_services] nvarchar(max),
+[Dental_sites] nvarchar(max),
+[Primary_schools] nvarchar(max),
+[Distance_Service] nvarchar(max),
+[Number_of_households] nvarchar(max),
+[Rank_funded] nvarchar(max),
+[Rank_HACC] nvarchar(max),
+[Rank_HH_services] nvarchar(max),
+[Rank_dental] nvarchar(max),
+[Rank_school] nvarchar(max),
+[Rank_distance] nvarchar(max),
+[Rank_household] nvarchar(max),
+[DHS_Region] nvarchar(max),
+[Area] nvarchar(max),
+[Local_Government_Area] nvarchar(max),
+[Population_density] nvarchar(max),
+[Nearest_Health_Service] nvarchar(max),
+[Residential] nvarchar(max),
+[Business] nvarchar(max),
+[Industrial] nvarchar(max),
+[Rural] nvarchar(max),
+[Other] nvarchar(max),
+[Persons_per_household] nvarchar(max),
+[People_In_non_private_dwellings] nvarchar(max),
+[Public_rental_dwellings] nvarchar(max),
+[Unemployed_persons] nvarchar(max),
+[Persons_above_75_living_alone] nvarchar(max),
+[Main_cultural_group_1_name] nvarchar(max),
+[Main_cultural_group_1_percentage] nvarchar(max),
+[Main_cultural_group_2_name] nvarchar(max),
+[Main_cultural_group_2_percentage] nvarchar(max),
+[Main_cultural_group_3_name] nvarchar(max),
+[Main_cultural_group3_percentage] nvarchar(max),
+
+
+PRIMARY KEY (Id)
+)
+
+BULK
+INSERT [dbo].[VicFinal]
+FROM 'D:\download\data for new iteration3.csv'
+WITH
+(
+FirstRow = 2,
+FIELDTERMINATOR = ',',
+ROWTERMINATOR = '\n'
+)
