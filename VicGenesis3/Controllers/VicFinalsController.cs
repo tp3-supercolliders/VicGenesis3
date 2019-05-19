@@ -27,9 +27,6 @@ namespace VicGenesis3.Controllers
         public static string bbbb;
        
 
-
-
-
         // GET: VicFinals
         public ActionResult Index()
         {
@@ -137,11 +134,6 @@ namespace VicGenesis3.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-
-
-
-
-
 
 
         [HttpGet]
