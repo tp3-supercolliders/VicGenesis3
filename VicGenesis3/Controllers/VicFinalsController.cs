@@ -22,6 +22,8 @@ namespace VicGenesis3.Controllers
         List<VicFinal> datalist = new List<VicFinal>();
 
         List<VicFinal> datalist2 = new List<VicFinal>();
+        public static VicFinal[] datalist3 = new VicFinal[2];
+
         public static string bbbb;
        
 
@@ -411,7 +413,53 @@ namespace VicGenesis3.Controllers
         {
             ViewBag.Culture = Style;
             ViewBag.Culture1 = Style1;
-            return View(db.VicFinals.ToList());
+            int k1 = 0;
+            int k2 = 0;
+            int k3 = 0;
+            int k4 = 0;
+            int k5 = 0;
+            int k6 = 0;
+            int k7 = 0;
+            int k8 = 0;
+            int k9 = 0;
+            int k10 = 0;
+            int maxValue = 0;
+            foreach (VicFinal item in db.VicFinals.ToList())
+            {
+                if (item.Community_Name.Equals(Style)) { datalist3[0] = item; }
+
+                if (item.Community_Name.Equals(Style1)) { datalist3[1] = item; }
+            }
+
+            int.TryParse(datalist3[0].Funded_services, out k1);
+            int.TryParse(datalist3[0].HACC_services, out k2);
+            int.TryParse(datalist3[0].Health_or_Human_services, out k3);
+            int.TryParse(datalist3[0].Dental_sites, out k4);
+            int.TryParse(datalist3[0].Primary_schools, out k5);
+
+            int.TryParse(datalist3[1].Funded_services, out k6);
+            int.TryParse(datalist3[1].HACC_services, out k7);
+            int.TryParse(datalist3[1].Health_or_Human_services, out k8);
+            int.TryParse(datalist3[1].Dental_sites, out k9);
+            int.TryParse(datalist3[1].Primary_schools, out k10);
+
+            maxValue = k1;
+            if (k2 > maxValue) { maxValue = k2; }
+            if (k3 > maxValue) { maxValue = k3; }
+            if (k4 > maxValue) { maxValue = k4; }
+            if (k5 > maxValue) { maxValue = k5; }
+            if (k6 > maxValue) { maxValue = k6; }
+            if (k7 > maxValue) { maxValue = k7; }
+            if (k8 > maxValue) { maxValue = k8; }
+            if (k9 > maxValue) { maxValue = k9; }
+            if (k10 > maxValue) { maxValue = k10; }
+
+            ViewBag.Culture3 = maxValue;
+
+            return View(datalist3);
+
+
+            //return View(db.VicFinals.ToList());
         }
 
 
