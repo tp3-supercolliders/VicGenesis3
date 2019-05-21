@@ -34,7 +34,7 @@ namespace VicGenesis3.Controllers
             bbbb = otherController.testing();
             ViewBag.Culture = bbbb;
             foreach (VicFinal item in db.VicFinals.ToList()) {
-                if (item.Community_Name.Equals(bbbb)) { datalist.Add(item); }
+                if (item.Community_Name.Equals(bbbb,StringComparison.CurrentCultureIgnoreCase)) { datalist.Add(item); }
             }
             return View(datalist);
                 //return View(db.VicFinals.ToList());
