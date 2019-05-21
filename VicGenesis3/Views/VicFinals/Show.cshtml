@@ -47,10 +47,44 @@
     <!--responsive.css-->
     <link rel="stylesheet" href="~/assets/css/responsive.css">
 
+
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script nonce="rAnd0m123" src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script nonce="rAnd0m123" src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </head>
 
 <body style="background-image:url(/Wopop_files/login_bgx.gif)">
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="~/Home/Index">Homepage</a>
+            </div>
+            <div>
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Know more on Map
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="~/Home/Map">Commuting Cost</a></li>
+                            <li class="divider"></li>
+                            <li><a href="~/Home/MapCulture">Cultural Groups Map</a></li>
+                            <li class="divider"></li>
+                            <li><a href="~/Home/MapCriminal">Criminal Incidents Map</a></li>
 
+                        </ul>
+                    </li>
+                    <li><a href="~/VicFinals/SelectGroup">Culture Sorting</a></li>
+                    <li><a href="~/VicFinals/Select">Areas Ranking </a></li>
+                    <li><a href="~/VicFinals/Compare">Areas Comparison </a></li>
+
+
+                </ul>
+            </div>
+        </div>
+    </nav>
 
 
     @if (ViewBag.Culture == ViewBag.Culture1 || ViewBag.Culture1 == ViewBag.Culture2 || ViewBag.Culture == ViewBag.Culture2)
