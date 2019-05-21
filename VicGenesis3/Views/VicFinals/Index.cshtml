@@ -127,8 +127,10 @@
             <a href="#" class="close" data-dismiss="alert">
                 &times;
             </a>
-            <strong>Warning!<br /></strong>We can not find any area named "@ViewBag.Culture". Please check your input and try agian!
-            <br /><img src="~/assets/images/ul0686-6537.jpg" />
+            <strong>Warning!<br /></strong>We can not find any area named "@ViewBag.Culture". Please check your input!
+           
+              <h4>You can go back to <a href="~/Home/Index"><u>homepage</u></a> and search again!</h4><br /><img src="~/assets/images/ul0686-6537.jpg" />
+           
         </div>
     }
 
@@ -151,7 +153,7 @@
                                 <br />
                                 <p>Click the button below to see more details.</p>
                                 <br /> <br />
-                                <a class="read_btn" @Html.ActionLink("Show More Details", "Details", new { id = item.Id })></a>
+                                       <a class="read_btn" @Html.ActionLink("Show More Details", "Details", new { id = item.Id })>>>>>>>>>>>>>>>>>>>></a>
                             </div>
                         </div>
                         <div class="col-lg-6">
